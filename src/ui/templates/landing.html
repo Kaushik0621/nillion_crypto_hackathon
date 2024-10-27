@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>House Your Skin</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            background-color: #ffffff;
+        }
+        header, footer {
+            position: fixed;
+            left: 0;
+            width: 100%;
+            color: #000;
+            padding: 1rem 2rem;
+            z-index: 1;
+        }
+        header {
+            top: 0;
+            background-color: rgb(255, 125, 31);
+            display: flex;
+            align-items: center;
+        }
+        header img {
+            height: 40px;
+            margin-right: 1rem;
+        }
+        header h1 {
+            font-size: 1.5rem;
+        }
+        footer {
+            bottom: 0;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            z-index: 1;
+        }
+        /* Fixed Background Image on Right */
+        .background {
+            position: fixed;
+            top: 40px;
+            right: 0;
+            bottom: 10px;
+            width: 51.9%;
+            height: calc(100% - 100px);
+            background: url("{{ url_for('static', filename='bg1.jpg') }}") no-repeat center center;
+            background-size: contain;
+            z-index: 0;
+        }
+        /* Fixed Text Section */
+        /* Fixed Text Section */
+        .fixed-text {
+            position: fixed;
+            top: 20%;
+            left: 53%;
+            width: 20%;
+            background-color: rgba(0, 0, 0, 0.5); /* Increased transparency */
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            line-height: 1.5;
+            z-index: 2;
+        }
+        
+        /* Button Positioned Next to the Person */
+        .button-container {
+            position: fixed;
+            top: 75%;
+            right: 30.8%;
+            transform: translateY(-50%);
+            z-index: 2;
+        }
+        
+        .button-container a {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: rgb(255, 125, 31);
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            border-radius: 4px;
+            text-align: center;
+        }
+        .button-container a:hover {
+            background-color: #e06d00;
+        }
+        /* Scrollable Content Section */
+        .content {
+            position: fixed;
+            top: 78px;
+            left: 1%;
+            width: 47%;
+            height: calc(100% - 130px);
+            overflow-y: auto;
+            background-color: #f9f9f9;
+            
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+        }
+        .content h3 {
+            color: rgb(255, 125, 31);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .content p {
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }/* Orange Scrolling Band */
+        .scrolling-band {
+            position: fixed;
+            top: 85%; /* Position it under the button */
+            right: 0;
+            width: 51.9%;
+            background-color: rgba(255, 200, 150, 0.8);
+            padding: 0.5rem;
+            color: white;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .scrolling-content {
+            display: inline-flex;
+            align-items: center;
+            white-space: nowrap;
+            animation: scrollLeft 10s linear infinite;
+            color: black; /* Set text color to black */
+        }
+       
+        
+        .scrolling-content img {
+            height: 40px;
+            margin: 0 1rem;
+        }
+        @keyframes scrollLeft {
+            from { transform: translateX(100%); }
+            to { transform: translateX(-100%); }
+        }
+        
+        /* Loader Overlay */
+        .loader-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 100;
+            backdrop-filter: blur(5px);
+            justify-content: center;
+            align-items: center;
+        }
+        .loader-video {
+            width: 300px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+    <script>
+        function showVideoLoader(duration = 1500, redirect = true) {
+            document.querySelector('.loader-overlay').style.display = 'flex';
+            setTimeout(() => {
+                document.querySelector('.loader-overlay').style.display = 'none';
+                if (redirect) {
+                    window.location.href = "/upload_page";
+                }
+            }, duration);
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Header with Logo -->
+    <header>
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
+        
+    </header>
+
+    <!-- Fixed Background Image on Right -->
+    <div class="background"></div>
+
+    <!-- Fixed Text Section -->
+    <div class="fixed-text">
+        <h2>An encrypted skincare platform that privately classifies skin disease images—without snarky doctors saying, 'It's never lupus.' Generates secure, tokenized reports for selective sharing, so your skin secrets stay private, unlike House's bedside manner.</h2>
+    </div>
+
+    <!-- Button Positioned Beside the Person in the Background Image -->
+    <div class="button-container">
+        <a href="javascript:void(0)" onclick="showVideoLoader(3000)">Go to Upload Page</a>
+    </div>
+
+    <!-- Scrollable Fixed Content Section on the Left -->
+    <div class="content">
+        <h3>Image Upload & Encryption</h3>
+        <p>Secure Upload – No Need to Lie About Symptoms: Upload your skin image; we encrypt it faster than House guesses the wrong diagnosis (on purpose, of course).</p>
+
+        <h3>Inference & Attestation Generation</h3>
+        <p>Trusted Diagnosis – Hold the Sarcasm: The server decrypts, analyzes, and generates a trusted attestation. No snarky commentary—just solid, reliable results.</p>
+
+        <h3>Diagnostic Unlock Code</h3>
+        <p>Diagnostic Unlock Code – House-Approved, Snark-Free: Download your encrypted diagnostic summary. Straight facts, no need for Vicodin.</p>
+
+        <h3>Optional Decentralized Storage & On-Demand Analysis</h3>
+        <p>Future-Proof Storage – We’ll Remember for You: Secure storage with optional on-demand analysis. Like having House on call—minus the constant eye-rolls.</p>
+
+        <h3>Local Verification & Proof Generation</h3>
+        <p>Verify Results – Because Trust Issues Exist: Use downloadable tools to verify the results yourself. Full transparency, minus House’s existential crisis.</p>
+
+        <h3>Blockchain Attestation</h3>
+        <p>Immutable Record – Trust Without the Lecture: Attestations on the blockchain mean permanent, tamper-proof records. Even House couldn’t mess with it.</p>
+    </div>
+
+    <!-- Orange Scrolling Band with Editable Content -->
+    <div class="scrolling-band">
+        <div class="scrolling-content"><span>Powered By:</span>
+            <img src="{{ url_for('static', filename='nillion_logo.jpg') }}" alt="Logo2">
+            <span>Nillion</span> &nbsp; | &nbsp;
+            <img src="{{ url_for('static', filename='ipfs_logo.png') }}" alt="Logo1">
+            <span>IPFS</span>&nbsp;  |  &nbsp;
+            This website is for experimental purpose only. &nbsp; | &nbsp; Please do not treat the results has actual medical suggestions. 
+        </div>
+    </div>
+
+    <!-- Video Loader Overlay -->
+    <div class="loader-overlay">
+        <video class="loader-video" autoplay muted playsinline loop>
+            <source src="{{ url_for('static', filename='Eye_view.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 House Your Skin. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

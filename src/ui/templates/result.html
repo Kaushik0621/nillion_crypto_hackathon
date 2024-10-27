@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Classification Result - Secure Skin Classifier</title>
+    <style>
+        /* General styling */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background: linear-gradient(to right, #e0e0e0, #f5f5f5);
+            color: #333;
+            margin: 0;
+        }
+        
+        /* Header and Footer */
+        header, footer {
+            position: fixed;
+            left: 0;
+            width: 100%;
+            color: #000;
+            padding: 1rem 2rem;
+            z-index: 1;
+        }
+        header {
+            top: 0;
+            background-color: rgb(255, 125, 31);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header img {
+            height: 40px;
+        }
+        header h1 {
+            font-size: 1.5rem;
+            margin-left: 1rem;
+        }
+        footer {
+            bottom: 0;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            height: 50px;
+            padding-top: 15px;
+        }
+
+        /* Main container styling */
+        .container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+        
+        /* Result card styling */
+        .result-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 2rem 3rem;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .result-card h2 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        
+        .result-card p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+        
+        .result-card a {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .result-card a:hover {
+            background-color: #0056b3;
+        }
+
+        
+    </style>
+</head>
+<body>
+
+    <!-- Header with Logo -->
+    <header>
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
+       
+    </header>
+
+    <!-- Result Content -->
+    <div class="container">
+        <div class="result-card">
+            <h2>Classification Result</h2>
+            <p>Probable Skin Disease: <strong>{{ disease_name }}</strong></p>
+            <a href="/upload_page">Return to Upload Page</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Secure Skin Classifier. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
