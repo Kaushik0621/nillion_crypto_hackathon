@@ -12,7 +12,7 @@ This project demonstrates privacy-preserving image classification, developed for
 - **Zero-Knowledge Proofs (ZKP)**: Verifies prediction integrity without exposing data.
 - **Multi-Party Computation (MPC)**: Aggregates data securely using secret-sharing methods.
 
----
+---<img width="1434" alt="Screenshot 2024-10-27 at 11 45 48 AM" src="https://github.com/user-attachments/assets/47a9a641-812f-4f18-b436-57a1c5786583">
 
 ## **Folder Structure**
 ```
@@ -212,4 +212,8 @@ Ensure all three services are running before interacting with the application.
 ## **License**
 This project is open-source and available under the [MIT License](LICENSE).
 
----
+---<img width="1437" alt="Screenshot 2024-10-27 at 11 46 54 AM" src="https://github.com/user-attachments/assets/c850d734-27c1-4262-a96e-11fbf367604d">
+
+<img width="1437" alt="Screenshot 2024-10-27 at 11 47 46 AM" src="https://github.com/user-attachments/assets/c19be80d-b51f-46a5-b3b1-a983b8191567">
+
+
