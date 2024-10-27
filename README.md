@@ -1,5 +1,5 @@
 
-# **Nillion Crypto Hackathon - Privacy-Preserving Image Classification**
+# **Nillion Crypto Hackathon - House Your Skin**
 
 ## **Overview**
 This project demonstrates privacy-preserving image classification, developed for the Nillion Crypto Hackathon. It utilizes advanced techniques like encryption, zero-knowledge proofs (ZKP), multi-party computation (MPC), and attestations to ensure secure and private classification of skin disease images. Decentralized storage through IPFS provides tamper-proof records of each prediction.
