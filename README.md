@@ -1,8 +1,16 @@
 
 # **Nillion Crypto Hackathon - House Your Skin**
 
+<img width="425" alt="Screenshot 2024-10-27 at 12 07 13 PM" src="https://github.com/user-attachments/assets/eae31adb-5573-4989-a021-7bc1609492d0">
+
 ## **Overview**
 This project demonstrates privacy-preserving image classification, developed for the Nillion Crypto Hackathon. It utilizes advanced techniques like encryption, zero-knowledge proofs (ZKP), multi-party computation (MPC), and attestations to ensure secure and private classification of skin disease images. Decentralized storage through IPFS provides tamper-proof records of each prediction.
+
+## **Motivation**
+In today’s digital age, privacy breaches have become a critical issue, especially within the healthcare sector. Personal health data, including medical images, is highly sensitive and, when exposed, can lead to devastating consequences for individuals. Misuse or unauthorized access to such data not only compromises patient confidentiality but also erodes public trust in digital health solutions.
+
+The House Your Skin project was developed with a strong commitment to privacy, recognizing the potential risks involved in handling sensitive medical data. By leveraging zero-knowledge proofs (ZKP), multi-party computation (MPC), and encryption, the project ensures that skin disease classification can be performed securely and privately, without compromising user data. This privacy-preserving approach empowers individuals to access digital health services with confidence, knowing their data is protected. Additionally, by using decentralized storage (IPFS), we ensure that records are tamper-proof and transparent, fostering a trustworthy, secure, and patient-centric solution.
+
 
 ## **Features**
 - **Secure Image Upload**: Encrypts uploaded images to protect user privacy.
