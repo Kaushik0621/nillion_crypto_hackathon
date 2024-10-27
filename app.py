@@ -75,7 +75,10 @@ def view_result():
         "3": "Basal cell carcinoma",
         "4": "Actinic keratoses and intraepithelial carcinoma",
         "5": "Vascular lesions",
-        "6": "Dermatofibroma"
+        "6": "Dermatofibroma",
+        "7": "No Skin Disease",
+        "8": "No Skin Disease",
+        "9": "No Skin Disease"
     }
     
     # Retrieve and match the disease class with probable disease
